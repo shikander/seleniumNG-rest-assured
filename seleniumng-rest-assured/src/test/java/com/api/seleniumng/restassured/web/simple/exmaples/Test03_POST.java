@@ -1,4 +1,4 @@
-package com.api.seleniumng.resassured.web.simple.exmaples;
+package com.api.seleniumng.restassured.web.simple.exmaples;
 
 import java.util.HashMap;
 import java.util.Map;

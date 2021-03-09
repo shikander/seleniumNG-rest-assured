@@ -1,31 +1,34 @@
-package com.api.seleniumng.resassured.web.simple.exmaples;
+package com.api.seleniumng.restassured.local.simple.examples;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
 
-public class Test04_PUT 
+public class Test03_PATCH 
 {
 	@Test
-	public void test_4_post_withHeaders()
+	public void test_patch()
 	{
 		JSONObject request = new JSONObject();
-		request.put("name", "John Smith");
-		request.put("job", "Software Engineer");
+		
+		request.put("lastName", "John");
+		
+		baseURI = "http://localhost:3000/";
 		
 		given().
-			header("Content-Type", "application/json").
 			contentType(ContentType.JSON).
 			accept(ContentType.JSON).
+			header("Content-Type", "application/json").
 			body(request.toJSONString()).
 		when().
-			put("https://reqres.in/api/users/2").
+			patch("/users/1").
 		then().
 			statusCode(200).
 			log().all();
 	}
+
 
 }

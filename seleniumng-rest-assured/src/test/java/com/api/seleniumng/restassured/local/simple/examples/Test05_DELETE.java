@@ -1,4 +1,4 @@
-package com.api.seleniumng.resassured.local.simple.examples;
+package com.api.seleniumng.restassured.local.simple.examples;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.when;

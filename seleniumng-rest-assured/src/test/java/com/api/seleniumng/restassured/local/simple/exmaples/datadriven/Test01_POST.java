@@ -1,4 +1,4 @@
-package com.api.seleniumng.resassured.local.simple.exmaples.datadriven;
+package com.api.seleniumng.restassured.local.simple.exmaples.datadriven;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

@@ -1,25 +1,20 @@
-package com.api.seleniumng.resassured.local.simple.exmaples.datadriven;
+package com.api.seleniumng.restassured.local.simple.exmaples.datadriven;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.when;
 
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Test02_DELETE 
+public class Test03_DELETE 
 {
 	
 	/*
 	 * Provide the correct userid in the Object[] from db.json file
-	 *  
+	 *  into testng.xml
 	 */
-	@DataProvider(name = "DataForDelete")
-	public Object[] dataForDelete()
-	{
-		return new Object[] {10, 6};
-	}
-	
-	@Test(dataProvider = "DataForDelete")
+	@Parameters({"userId"})
+	@Test
 	public void test_delete(int userId)
 	{
 		baseURI = "http://localhost:3000/";

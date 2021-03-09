@@ -1,20 +1,22 @@
-package com.api.seleniumng.resassured.local.simple.examples;
+package com.api.seleniumng.restassured.local.simple.examples;
 
 import static io.restassured.RestAssured.*;
-
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
 
-public class Test03_PATCH 
+public class Test02_POST 
 {
+	
 	@Test
-	public void test_patch()
+	public void test_post()
 	{
 		JSONObject request = new JSONObject();
 		
-		request.put("lastName", "John");
+		request.put("firstName", "Edan");
+		request.put("lastName", "Collins");
+		request.put("departmentId", 2);
 		
 		baseURI = "http://localhost:3000/";
 		
@@ -24,11 +26,11 @@ public class Test03_PATCH
 			header("Content-Type", "application/json").
 			body(request.toJSONString()).
 		when().
-			patch("/users/1").
+			post("/users").
 		then().
-			statusCode(200).
+			statusCode(201).
 			log().all();
 	}
-
+	
 
 }
